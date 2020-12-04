@@ -2,6 +2,9 @@ google:
     storage:
         bucket-name: wordcount-1234
 spring:
+    cloud:
+      gcp:
+          project-id: wordcount-297608
     kafka:
         consumer:
             auto-offset-reset: earliest
