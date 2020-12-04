@@ -19,7 +19,7 @@ class CountPlainTextConsumer(
     @KafkaListener(topics = ["\${messages.topic.count-plain-text}"])
     fun receive(consumerRecord: ConsumerRecord<*, *>) {
         LOGGER.info("received payload='{}'", consumerRecord.toString())
-        extractor.extract(consumerRecord.toString())
+        extractor.extract(consumerRecord.value().toString())
     }
 
     companion object {

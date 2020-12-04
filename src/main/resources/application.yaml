@@ -1,7 +1,6 @@
 google:
     storage:
-        bucket:
-            wordcount-1234
+        bucket-name: wordcount-1234
 spring:
     kafka:
         consumer:

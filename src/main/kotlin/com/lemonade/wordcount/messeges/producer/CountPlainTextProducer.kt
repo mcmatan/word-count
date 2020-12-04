@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class CountPlainTextProducer(
-        @Value("messages.topic.count-plain-text")
+        @Value("\${messages.topic.count-plain-text}")
         private val topic: String,
         @Autowired
         private val kafkaTemplate: KafkaTemplate<String, String>
