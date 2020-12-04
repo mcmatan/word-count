@@ -1,0 +1,12 @@
+google:
+    storage:
+        bucket:
+            wordcount-1234
+spring:
+    kafka:
+        consumer:
+            auto-offset-reset: earliest
+            group-id: wordcount
+messages:
+    topic:
+        count-plain-text: count-plain-text
