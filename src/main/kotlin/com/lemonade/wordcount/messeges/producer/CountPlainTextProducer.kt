@@ -17,7 +17,7 @@ class CountPlainTextProducer(
 
     fun send(payload: String) {
         LOGGER.info("sending payload='{}' to topic='{}'", payload, topic)
-        kafkaTemplate.send("count-plain-text", payload)
+        kafkaTemplate.send(topic, payload)
     }
 
     companion object {

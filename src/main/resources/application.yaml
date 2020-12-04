@@ -9,3 +9,5 @@ spring:
 messages:
     topic:
         count-plain-text: count-plain-text
+        count-url: count-url
+        count-path: count-path
