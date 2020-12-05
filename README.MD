@@ -17,4 +17,4 @@ GET http://localhost:8080/statistics?word=house
 mvn package
 
 
-<p align = "center"><img src="https://i.ibb.co/SQVzD5X/Screen-Shot-2020-12-05-at-4-59-02-PM.png" alt="WordCount Icon"/></p>
+<p align = "center"><img src="https://i.ibb.co/mvymRbj/Screen-Shot-2020-12-05-at-5-19-25-PM.png" alt="WordCount Icon"/></p>
