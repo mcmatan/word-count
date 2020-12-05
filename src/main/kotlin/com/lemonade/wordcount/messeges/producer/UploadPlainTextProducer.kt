@@ -8,8 +8,8 @@ import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Component
 
 @Component
-class CountPlainTextProducer(
-        @Value("\${messages.topic.count-plain-text}")
+class UploadPlainTextProducer(
+        @Value("\${messages.topic.upload-plain-text}")
         private val topic: String,
         @Autowired
         private val kafkaTemplate: KafkaTemplate<String, String>
@@ -21,6 +21,6 @@ class CountPlainTextProducer(
     }
 
     companion object {
-        private val LOGGER: Logger = LoggerFactory.getLogger(CountPlainTextProducer::class.java)
+        private val LOGGER: Logger = LoggerFactory.getLogger(UploadPlainTextProducer::class.java)
     }
 }

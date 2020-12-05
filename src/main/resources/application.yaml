@@ -2,10 +2,6 @@ google:
     storage:
         bucket-name: wordcount-1234
 spring:
-#    data:
-#        redis:
-#            repositories:
-#                enabled: true
     redis:
         database: 0
         host: localhost
@@ -20,6 +16,7 @@ spring:
             group-id: wordcount
 messages:
     topic:
-        count-plain-text: count-plain-text
-        count-url: count-url
-        count-path: count-path
+        upload-plain-text: upload-plain-text
+        upload-url: upload-url
+        upload-path: upload-path
+        count: count
