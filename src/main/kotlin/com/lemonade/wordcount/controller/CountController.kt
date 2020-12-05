@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController
 
 
 @RestController
-@RequestMapping("counter")
-class CounterController(
+@RequestMapping("count")
+class CountController(
         @Autowired
         val addCountTaskService: AddCountTaskService
 ) {
