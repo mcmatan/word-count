@@ -1,4 +1,6 @@
-#Before you run the project:#
+# WordCount
+
+## Before you run the project:
 
 1.Please install redis and run via docker:
 docker run -p 6379:6379 -d redis:6.0 redis-server --requirepass "mypass"
