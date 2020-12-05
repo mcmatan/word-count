@@ -18,7 +18,7 @@ class CountController(
 ) {
 
     @PostMapping
-    fun update(@RequestBody counterUpdateDTO: CounterUpdateDTO) =
+    fun count(@RequestBody counterUpdateDTO: CounterUpdateDTO) =
             addCountTaskService.count(counterUpdateDTO.toEntity())
 
 }
