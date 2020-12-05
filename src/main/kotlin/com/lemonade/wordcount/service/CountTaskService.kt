@@ -49,28 +49,4 @@ class CountTaskServiceImp(
             wordCountRepository.save(word)
         }
     }
-
-//    fun foo() {
-//        val conf = SparkConf().setAppName("wordCounts").setMaster("local[*]")
-//        val sc = JavaSparkContext(conf)
-//        conf.set("fs.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFileSystem")
-//        conf.set("fs.AbstractFileSystem.gs.impl", "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS")
-//        conf.set("fs.gs.project.id", "wordcount-297608")
-//        conf.set("google.cloud.auth.service.account.enable", "true")
-//
-//        val lines: JavaRDD<String> = sc.textFile(gcsResource)
-//        val words = lines.flatMap { line: String -> Arrays.asList(*line.split(" ".toRegex()).toTypedArray()).iterator() }
-//
-//        val wordCounts = words.countByValue()
-//
-//        for ((key, value) in wordCounts) {
-//            var word = wordCountRepository.findByIdOrNull(key).let {
-//                it
-//            } ?: run {
-//                Word(key, 0)
-//            }
-//            word.count += value
-//            wordCountRepository.save(word)
-//        }
-//    }
 }
