@@ -27,6 +27,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.module</groupId>
 			<artifactId>jackson-module-kotlin</artifactId>
+			<version>2.12.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
@@ -56,56 +57,58 @@
 			<version>1.15.0</version>
 			<scope>test</scope>
 		</dependency>
-<!--		<dependency>-->
-<!--			<groupId>com.google.cloud</groupId>-->
-<!--			<artifactId>google-cloud-storage</artifactId>-->
-<!--			<version>1.17.0</version>-->
-<!--		</dependency>-->
-		<!-- https://mvnrepository.com/artifact/com.google.cloud/google-cloud-storage -->
-		<!-- https://mvnrepository.com/artifact/com.google.cloud/google-cloud-storage -->
-		<!-- https://mvnrepository.com/artifact/com.google.cloud/google-cloud-storage -->
+
 		<dependency>
 			<groupId>com.google.cloud</groupId>
 			<artifactId>google-cloud-storage</artifactId>
-			<version>1.97.0</version>
+			<version>1.96.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.guava</groupId>
+					<artifactId>guava</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-
-
-
-
-
-		<!--		<dependency>-->
-<!--			<groupId>org.apache.spark</groupId>-->
-<!--			<artifactId>spark-core_2.10</artifactId>-->
-<!--			<version>1.6.0</version>-->
-<!--		</dependency>-->
-<!--		&lt;!&ndash; https://mvnrepository.com/artifact/org.apache.spark/spark-core &ndash;&gt;-->
-<!--		<dependency>-->
-<!--			<groupId>org.apache.spark</groupId>-->
-<!--			<artifactId>spark-core_2.12</artifactId>-->
-<!--			<version>2.4.7</version>-->
-<!--		</dependency>-->
-
-		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
-<!--		<dependency>-->
-<!--			<groupId>org.apache.spark</groupId>-->
-<!--			<artifactId>spark-core_2.12</artifactId>-->
-<!--			<version>3.0.1</version>-->
-
-
-<!--			<exclusions>-->
-<!--				<exclusion>-->
-<!--					<groupId>org.slf4j</groupId>-->
-<!--					<artifactId>slf4j-log4j12</artifactId>-->
-<!--				</exclusion>-->
-<!--				<exclusion>-->
-<!--					<groupId>log4j</groupId>-->
-<!--					<artifactId>log4j</artifactId>-->
-<!--				</exclusion>-->
-<!--			</exclusions>-->
-<!--		</dependency>-->
-
-
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>21.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.11</artifactId>
+			<version>2.4.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.hadoop</groupId>
+					<artifactId>hadoop-mapreduce-client-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.apache.hadoop</groupId>
+					<artifactId>hadoop-common</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-mapreduce-client-core</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-common</artifactId>
+			<version>2.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.cloud.bigdataoss</groupId>
+			<artifactId>gcs-connector</artifactId>
+			<version>hadoop3-1.9.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<version>2.3.3.RELEASE</version>
+		</dependency>
 	</dependencies>
 
 	<build>

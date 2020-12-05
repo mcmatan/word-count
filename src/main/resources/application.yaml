@@ -2,6 +2,15 @@ google:
     storage:
         bucket-name: wordcount-1234
 spring:
+#    data:
+#        redis:
+#            repositories:
+#                enabled: true
+    redis:
+        database: 0
+        host: localhost
+        port: 6379
+        password: mypass
     cloud:
       gcp:
           project-id: wordcount-297608
