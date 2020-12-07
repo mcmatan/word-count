@@ -39,14 +39,12 @@ class CountTaskServiceImp(
 
         val wordCounts = words.countByValue()
 
-        for ((key, value) in wordCounts) {
-            var word = wordCountRepository.findByIdOrNull(key).let {
-                it
-            } ?: run {
-                Word(key, 0)
-            }
-            word.count += value
-            wordCountRepository.save(word)
+        for ((word, value) in wordCounts) {
+            var count = wordCountRepository.get(word)
+            count += value
+            wordCountRepository.set(word, count)
         }
+
+        wordCountRepository.saveToDisk()
     }
 }

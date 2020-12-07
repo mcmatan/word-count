@@ -15,9 +15,5 @@ class StatisticsServiceImp(
         val wordCountRepository: WordCountRepository
 ): StatisticsService  {
 
-    override fun wordCount(word: String): Long = wordCountRepository.findByIdOrNull(word)?.let {
-        it.count
-    } ?: run {
-        0.toLong()
-    }
+    override fun wordCount(word: String): Long = wordCountRepository.get(word)
 }
