@@ -1,6 +1,5 @@
 package com.lemonade.wordcount.messeges.consumer
 
-import com.lemonade.wordcount.extractor.PathExtractor
 import com.lemonade.wordcount.service.CountTaskService
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.slf4j.Logger
@@ -17,9 +16,5 @@ class CountConsumer(
     @KafkaListener(topics = ["\${messages.topic.count}"])
     fun receive(consumerRecord: ConsumerRecord<*, *>) {
         countService.count(consumerRecord.value().toString())
-    }
-
-    companion object {
-        private val LOGGER: Logger = LoggerFactory.getLogger(CountConsumer::class.java)
     }
 }

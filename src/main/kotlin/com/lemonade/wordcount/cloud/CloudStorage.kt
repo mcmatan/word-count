@@ -22,16 +22,13 @@ class CloudStorage(
         bucket = storage.get(bucketName)
     }
 
-    fun upload(text: String): BlobId? {
-        val bytes: ByteArray = text.toByteArray(StandardCharsets.UTF_8)
-        val sha256hex: String = DigestUtils.sha256Hex(Math.random().toString())
-        val blob = bucket?.create(sha256hex, bytes)
-        return blob?.blobId
-    }
+    fun upload(text: String): BlobId? =
+            text.toByteArray(StandardCharsets.UTF_8).let {
+                bucket?.create(_sha256(), it)?.blobId
+            }
 
-    fun upload(inputStream: InputStream): BlobId? {
-        val sha256hex: String = DigestUtils.sha256Hex(Math.random().toString())
-        val blob = bucket?.create(sha256hex, inputStream)
-        return blob?.blobId
-    }
+    fun upload(inputStream: InputStream): BlobId? =
+            bucket?.create(_sha256(), inputStream)?.blobId
+
+    private fun _sha256() = DigestUtils.sha256Hex(Math.random().toString())
 }

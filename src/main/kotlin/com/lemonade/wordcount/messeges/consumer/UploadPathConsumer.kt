@@ -1,6 +1,6 @@
 package com.lemonade.wordcount.messeges.consumer
 
-import com.lemonade.wordcount.extractor.PathExtractor
+import com.lemonade.wordcount.extractor.Extractor
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
@@ -11,14 +11,10 @@ import org.springframework.stereotype.Component
 @Component
 class UploadPathConsumer(
         @Autowired
-        val extractor: PathExtractor
+        val extractor: Extractor
 ) {
     @KafkaListener(topics = ["\${messages.topic.upload-path}"])
     fun receive(consumerRecord: ConsumerRecord<*, *>) {
-        extractor.extract(consumerRecord.value().toString())
-    }
-
-    companion object {
-        private val LOGGER: Logger = LoggerFactory.getLogger(UploadPathConsumer::class.java)
+        extractor.extractPath(consumerRecord.value().toString())
     }
 }
